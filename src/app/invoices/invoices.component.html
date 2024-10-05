@@ -1,0 +1,8 @@
+@if(newInvoiceStarted){
+<app-new-invoice />
+} @else { @if(anyInvoiceSelected){
+<app-invoice-item-details />
+} @if(!anyInvoiceSelected){
+<app-invoices-heading />
+<app-invoices-list />
+} }

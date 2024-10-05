@@ -1,0 +1,103 @@
+<app-invoice-nav />
+
+<section class="invoice-status">
+  <h3>Status</h3>
+  <h4
+    [class]="{   
+        statusFlag : true,   
+        paid: invoice.status === 'paid',
+        draft: invoice.status === 'draft',
+        pending: invoice.status === 'pending',
+    }"
+  >
+    {{ invoice.status | title | bullet }}
+  </h4>
+</section>
+
+<article class="invoice-data">
+  <div class="invoice-head">
+    <dl class="invoice-id">
+      <dd>
+        <span class="gray-bold">#</span>
+        <span class="black-bold">{{ invoice.id }}</span>
+      </dd>
+      <dd class="gray-normal">{{ invoice.description }}</dd>
+    </dl>
+
+    <dl class="invoice-sender gray-normal">
+      <dd>{{ invoice.senderAddress.street }}</dd>
+      <dd>{{ invoice.senderAddress.city }}</dd>
+      <dd>{{ invoice.senderAddress.postCode }}</dd>
+      <dd>{{ invoice.senderAddress.country }}</dd>
+    </dl>
+  </div>
+
+  <div class="invoice-body">
+    <section class="invoice-dates">
+      <dl>
+        <dt class="gray-normal">Invoice Date</dt>
+        <dd class="black-bold">{{ invoice.createdAt }}</dd>
+      </dl>
+      <dl>
+        <dt class="gray-normal">Payment Due</dt>
+        <dd class="black-bold">{{ invoice.paymentDue }}</dd>
+      </dl>
+    </section>
+
+    <dl class="invoice-billing">
+      <dt class="gray-normal">Bill To</dt>
+      <dd class="black-bold">{{ invoice.clientName }}</dd>
+      <dl class="client-address gray-normal">
+        <dd>{{ invoice.clientAddress.street }}</dd>
+        <dd>{{ invoice.clientAddress.city }}</dd>
+        <dd>{{ invoice.clientAddress.postCode }}</dd>
+        <dd>{{ invoice.clientAddress.country }}</dd>
+      </dl>
+    </dl>
+
+    <dl class="invoice-sent">
+      <dt class="gray-normal">Sent To</dt>
+      <dd class="black-bold">{{ invoice.clientEmail }}</dd>
+    </dl>
+  </div>
+
+  <section class="invoice-items">
+    <dl class="invoice-line-items">
+      @for(item of invoice.items; track item.name ){
+      <div class="item-line">
+        <div>
+          <dt class="black-bold">{{ item.name }}</dt>
+          <dd class="gray-bold">
+            {{ item.quantity }} x
+            {{ item.price | number : "1.2" | pound }}
+          </dd>
+        </div>
+        <div>
+          <dd class="black-bold">
+            {{ item.total | number : "1.2" | pound }}
+          </dd>
+        </div>
+      </div>
+      }
+    </dl>
+
+    <dl class="invoice-total">
+      <dt>Grand Total</dt>
+      <dd>{{ invoice.total | number : "1.2" | pound }}</dd>
+    </dl>
+  </section>
+</article>
+
+<section class="invoice-operations">
+  <button class="btn edit" (click)="onEdit(invoice.id)">Edit</button>
+  <button class="btn delete" (click)="onDelete(invoice.id)">Delete</button>
+  @if(invoice.status === 'pending'){
+  <button class="btn mark-paid" (click)="onMarkPaid(invoice.id)">
+    Mark as Paid
+  </button>
+  } @if(invoice.status === 'draft'){
+  <button class="btn mark-pending" (click)="onMarkPending(invoice.id)">
+    Mark as Pending
+  </button>
+  }
+</section>

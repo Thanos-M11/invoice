@@ -1,0 +1,62 @@
+.logo-box-0 {
+  height: inherit;
+  width: 80px;
+  background-color: inherit;
+  position: relative;
+}
+
+.logo-box-1 {
+  height: 60px;
+  width: 80px;
+  border-top-right-radius: 2.5em;
+  background-color: hsl(252, 94%, 67%);
+  position: absolute;
+  top: 0;
+}
+
+.logo-box-2 {
+  height: 40px;
+  width: 80px;
+  border-bottom-right-radius: 2.5em;
+  border-top-left-radius: 2.5em;
+  background-color: hsl(252, 100%, 73%);
+  position: absolute;
+  top: 40px;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg {
+  scale: 1.2;
+}
+
+.logo-bar {
+  height: 80px;
+  background-color: hsl(233, 30%, 21%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mode-icon {
+  margin-left: auto;
+  padding: 2em;
+  scale: 1.2;
+}
+
+.user-image {
+  border-radius: 5em;
+  width: 80px;
+  padding: 2em;
+}
+
+.divider {
+  width: 1px;
+  height: inherit;
+  border-right: 1px solid hsl(231, 20%, 61%);
+}

@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-purple-01: #7c5dfa;
+  --color-purple-02: #9277ff;
+  --color-dark-blue-03: #1e2139;
+  --color-dark-blue-04: #252945;
+  --color-dark-blue-05: #343b53;
+
+  --color-gray-05: #dfe3fa;
+  --color-gray-06: #888eb0;
+  --color-gray-07: #7e88c3;
+  --color-black-08: #0c0e16;
+  --color-black-12: #141625;
+  --color-red-08: #ec5757;
+  --color-red-10: #ff9797;
+  --color-white-11: #f8f8fb;
+}
+
+/*
+    Josh Comeau's Custom CSS Reset
+    https://www.joshwcomeau.com/css/custom-css-reset/
+  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: hsl(242, 35%, 98%);
+  /* background-color: light-dark(
+    var(--color-white-11),
+    var(--color-dark-blue-03)
+  ); */
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  text-indent: 0;
+}
+
+.light {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+h1 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.75px;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.25px;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.25px;
+}
+
+h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+}
+
+h6 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}

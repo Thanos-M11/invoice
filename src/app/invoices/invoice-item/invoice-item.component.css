@@ -1,0 +1,77 @@
+.invoice-row {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1em;
+  row-gap: 1em;
+  align-items: center;
+
+  border-radius: 1em;
+  padding: 2em;
+  margin-bottom: 2.5em;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 10px hsl(231, 20%, 83%);
+    cursor: pointer;
+  }
+}
+
+.invoice-row :nth-child(2) {
+  justify-self: end;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: hsl(231, 20%, 73%);
+  font-weight: 500;
+}
+
+.payment-due :nth-child(2) {
+  color: #000;
+  font-weight: 700;
+}
+
+.invoiceStatus {
+  border-radius: 0.7em;
+  text-align: center;
+  padding: 0.5em 1em;
+  font-size: 1.8rem;
+}
+
+.paid {
+  background-color: hsl(160, 67%, 92%);
+  color: hsl(160, 67%, 52%);
+}
+.draft {
+  background-color: hsl(231, 20%, 87%);
+  color: hsl(231, 20%, 27%);
+}
+.pending {
+  background-color: hsl(34, 100%, 90%);
+  color: hsl(34, 100%, 50%);
+}
+
+img {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .invoice-row {
+    &:hover {
+      box-shadow: none;
+      cursor: default;
+    }
+  }
+
+  img {
+    display: block;
+    scale: 1.5;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
+}

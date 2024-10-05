@@ -1,0 +1,18 @@
+<div class="invoices-heading">
+  <section class="title">
+    <h1>Invoices</h1>
+
+    @if(invoicesNotEmpty$ | async) {
+    <h3>{{ invoicesCount$ | async }} invoices</h3>
+    } @else {
+    <h3>No invoices</h3>
+    }
+  </section>
+
+  <app-invoices-filter />
+
+  <button class="btn-newInvoice" (click)="onNewInvoice()">
+    <img src="icon-plus.svg" alt="plus icon" />
+    <h4>New</h4>
+  </button>
+</div>

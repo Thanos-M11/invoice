@@ -1,0 +1,21 @@
+<li class="invoice-row" (click)="onInvoiceClick(invoice)">
+  <h2>#{{ invoice.id }}</h2>
+  <h3>{{ invoice.clientName }}</h3>
+
+  <section class="payment-due">
+    <h3>Due {{ invoice.paymentDue | date : "d MMM y" }}</h3>
+    <h3>{{ invoice.total | number : "1.2" | pound }}</h3>
+  </section>
+  <h4
+    [class]="{
+    invoiceStatus : true,   
+    paid: invoice.status === 'paid',
+    draft: invoice.status === 'draft',
+    pending: invoice.status === 'pending',
+  }"
+  >
+    {{ invoice.status | title | bullet }}
+  </h4>
+
+  <img src="icon-arrow-right.svg" alt=" arrow right icon" />
+</li>

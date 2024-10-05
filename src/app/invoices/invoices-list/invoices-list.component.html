@@ -1,0 +1,7 @@
+<ul>
+  @for(invoice of filteredInvoices$ | async; track invoice.id){
+  <app-invoice-item [invoice]="invoice" />
+  } @empty {
+  <app-no-invoice />
+  }
+</ul>

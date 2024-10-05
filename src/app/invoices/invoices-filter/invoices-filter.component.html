@@ -1,0 +1,24 @@
+<button class="btn-filter">
+  <h4>Filter</h4>
+  <img src="icon-arrow-down.svg" alt="arrow down icon" />
+
+  @if(invoicesNotEmpty$ | async){
+
+  <form [formGroup]="form" (change)="onChange()">
+    <fieldset class="drop-down-container" formArrayName="filter">
+      @for(filter of filterState$ | async; track filter.id){
+      <div>
+        <input
+          type="checkbox"
+          name="filter"
+          [id]="filter.filterStatus"
+          [value]="filter.value"
+          [formControlName]="filter.id.toString()"
+        />
+        <label [for]="filter.filterStatus"> {{ filter.text }} </label>
+      </div>
+      }
+    </fieldset>
+  </form>
+  }
+</button>

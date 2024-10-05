@@ -1,0 +1,44 @@
+.btn-filter {
+  margin-left: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  border: none;
+  background-color: inherit;
+
+  &:hover .drop-down-container {
+    display: block;
+  }
+}
+
+.btn-filter h4 {
+  font-size: 1.8rem;
+}
+
+.btn-filter img {
+  scale: 1.5;
+}
+
+.drop-down-container {
+  position: absolute;
+  display: none;
+  background-color: hsl(240, 27%, 100%);
+  box-shadow: 0 0 10px 5px hsl(240, 27%, 95%);
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  top: 2.75em;
+  left: -2.5em;
+  width: 150%;
+}
+
+.drop-down-container div {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  gap: 0.75em;
+  align-items: center;
+}

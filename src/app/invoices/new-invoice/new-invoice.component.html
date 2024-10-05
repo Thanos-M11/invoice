@@ -1,0 +1,8 @@
+<app-invoice-nav />
+<div class="container">
+  @if(newInvoiceStarted$ | async){
+  <h2>New Invoice</h2>
+  } @else {
+  <h2>Edit Invoice ID</h2>
+  }
+</div>
